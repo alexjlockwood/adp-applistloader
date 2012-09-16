@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity {
    * This ListFragment displays a list of all installed applications on the
    * device as its sole content. It uses an {@link AppListLoader} to load
    * its data and the LoaderManager to manage the loader across the activity
-   * and fragment lifecycles.
+   * and fragment life cycles.
    */
   public static class AppListFragment extends ListFragment implements
       LoaderManager.LoaderCallbacks<List<AppEntry>> {
@@ -118,21 +118,20 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
-        case R.id.menu_configure_locale: {
+        case R.id.menu_configure_locale:
           configureLocale();
           return true;
-        }
       }
       return false;
     }
 
     /**
      * Notifies the Loader that a configuration change has has occurred (i.e. by
-     * simply calling {@link Loader#onContentChanged()}).
+     * calling {@link Loader#onContentChanged()}).
      *
      * This feature was added so that it would be easy to see the sequence of
      * events that occurs when a content change is detected. Connect your
-     * device via USB and analyze the logcat for the sequence of methods that
+     * device via USB and analyze the logcat to see the sequence of methods that
      * are called as a result!
      */
     private void configureLocale() {

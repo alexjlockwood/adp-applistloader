@@ -2,6 +2,7 @@
 
     <item
         android:id="@+id/menu_configure_locale"
-        android:showAsAction="never"
-        android:title="@string/menu_configure_locale"/>
+        android:showAsAction="collapseActionView"
+        android:title="@string/menu_configure_locale" />
+
 </menu>
