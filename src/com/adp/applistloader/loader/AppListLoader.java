@@ -185,6 +185,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
       getContext().unregisterReceiver(mAppsObserver);
       mAppsObserver = null;
     }
+
     if (mLocaleObserver != null) {
       getContext().unregisterReceiver(mLocaleObserver);
       mLocaleObserver = null;
