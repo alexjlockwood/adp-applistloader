@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppListLoader</string>
+    <string name="activity_title">Installed Applications</string>
+    <string name="menu_configure_locale">Change system locale</string>
+</resources>
