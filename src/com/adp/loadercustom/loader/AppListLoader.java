@@ -1,4 +1,4 @@
-package com.adp.applistloader.loader;
+package com.adp.loadercustom.loader;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -12,15 +12,15 @@ import android.content.pm.PackageManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
-import com.adp.applistloader.observer.InstalledAppsObserver;
-import com.adp.applistloader.observer.SystemLocaleObserver;
+import com.adp.loadercustom.observer.InstalledAppsObserver;
+import com.adp.loadercustom.observer.SystemLocaleObserver;
 
 /**
  * An implementation of AsyncTaskLoader which loads a {@code List<AppEntry>}
  * containing all installed applications on the device.
  */
 public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
-  private static final String TAG = "AppListLoader";
+  private static final String TAG = "ADP_AppListLoader";
   private static final boolean DEBUG = true;
 
   final PackageManager mPm;
@@ -104,7 +104,8 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
     mApps = apps;
 
     if (isStarted()) {
-      if (DEBUG) Log.i(TAG, "+++ Delivering results to the LoaderManager for the ListFragment to display! +++");
+      if (DEBUG) Log.i(TAG, "+++ Delivering results to the LoaderManager for" +
+      		" the ListFragment to display! +++");
       // If the Loader is in a started state, have the superclass deliver the
       // results to the client.
       super.deliverResult(apps);

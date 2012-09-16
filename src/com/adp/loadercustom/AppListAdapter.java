@@ -1,4 +1,4 @@
-package com.adp.applistloader;
+package com.adp.loadercustom;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.adp.applistloader.MainActivity.AppListFragment;
-import com.adp.applistloader.loader.AppEntry;
 import com.adp.loadercustom.R;
+import com.adp.loadercustom.MainActivity.AppListFragment;
+import com.adp.loadercustom.loader.AppEntry;
 
 /**
  * A custom ArrayAdapter used by the {@link AppListFragment} to display the

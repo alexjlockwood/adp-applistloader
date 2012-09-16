@@ -1,4 +1,4 @@
-package com.adp.applistloader;
+package com.adp.loadercustom;
 
 import java.util.List;
 
@@ -15,9 +15,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.adp.applistloader.loader.AppEntry;
-import com.adp.applistloader.loader.AppListLoader;
-import com.adp.loadercustom.R;
+import com.adp.loadercustom.loader.AppEntry;
+import com.adp.loadercustom.loader.AppListLoader;
 
 /**
  * The main activity holds an {@link AppListFragment} which displays the list of
@@ -45,7 +44,7 @@ public class MainActivity extends FragmentActivity {
    */
   public static class AppListFragment extends ListFragment implements
       LoaderManager.LoaderCallbacks<List<AppEntry>> {
-    private static final String TAG = "AppListFragment";
+    private static final String TAG = "ADP_AppListFragment";
     private static final boolean DEBUG = true;
 
     // We use a custom ArrayAdapter to bind application info to the ListView.
