@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity {
     private AppListAdapter mAdapter;
 
     // The Loader's id (this id is specific to the ListFragment's LoaderManager)
-    private static final int LOADER_ID = 0x01;
+    private static final int LOADER_ID = 1;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
