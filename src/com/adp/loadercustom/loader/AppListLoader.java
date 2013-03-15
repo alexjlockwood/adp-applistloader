@@ -25,7 +25,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
 
   final PackageManager mPm;
 
-  // We hold a reference to the LoaderÕs data here.
+  // We hold a reference to the Loaderï¿½s data here.
   private List<AppEntry> mApps;
 
   public AppListLoader(Context ctx) {
@@ -92,14 +92,13 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
       // it will see here that the Loader has been reset and discard any
       // resources associated with the new data as necessary.
       if (apps != null) {
-        onReleaseResources(apps);
+        releaseResources(apps);
         return;
       }
     }
 
     // Hold a reference to the old data so it doesn't get garbage collected.
-    // The old data may still be in use (i.e. bound to an adapter, etc.), so
-    // we must protect it until the new data has been delivered.
+    // We must protect it until the new data has been delivered.
     List<AppEntry> oldApps = mApps;
     mApps = apps;
 
@@ -114,12 +113,12 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
     // Invalidate the old data as we don't need it any more.
     if (oldApps != null && oldApps != apps) {
       if (DEBUG) Log.i(TAG, "+++ Releasing any old data associated with this Loader. +++");
-      onReleaseResources(oldApps);
+      releaseResources(oldApps);
     }
   }
 
   /*********************************************************/
-  /** (3) Implement the LoaderÕs state-dependent behavior **/
+  /** (3) Implement the Loaderï¿½s state-dependent behavior **/
   /*********************************************************/
 
   @Override
@@ -177,7 +176,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
 
     // At this point we can release the resources associated with 'apps'.
     if (mApps != null) {
-      onReleaseResources(mApps);
+      releaseResources(mApps);
       mApps = null;
     }
 
@@ -202,7 +201,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
 
     // The load has been canceled, so we should release the resources
     // associated with 'mApps'.
-    onReleaseResources(apps);
+    releaseResources(apps);
   }
 
   @Override
@@ -215,7 +214,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
    * Helper method to take care of releasing resources associated with an
    * actively loaded data set.
    */
-  protected void onReleaseResources(List<AppEntry> apps) {
+  private void releaseResources(List<AppEntry> apps) {
     // For a simple List, there is nothing to do. For something like a Cursor,
     // we would close it in this method. All resources associated with the
     // Loader should be released here.
