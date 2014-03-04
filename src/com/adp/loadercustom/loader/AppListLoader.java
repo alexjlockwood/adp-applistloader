@@ -23,7 +23,7 @@ public class AppListLoader extends AsyncTaskLoader<List<AppEntry>> {
   private static final String TAG = "ADP_AppListLoader";
   private static final boolean DEBUG = true;
 
-  private final PackageManager mPm;
+  final PackageManager mPm;
 
   // We hold a reference to the Loader's data here.
   private List<AppEntry> mApps;
