@@ -47,8 +47,8 @@ public class AppListAdapter extends ArrayAdapter<AppEntry> {
   public void setData(List<AppEntry> data) {
     clear();
     if (data != null) {
-      for (int i = 0; i < data.size(); i++) {
-        add(data.get(i));
+      for (Items aData : data) {
+                add(aData);
       }
     }
   }
